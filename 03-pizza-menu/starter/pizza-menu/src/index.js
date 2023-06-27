@@ -92,13 +92,14 @@ function Menu() {
   );
 }
 
-function Pizza({ photoName, name, price }) {
+function Pizza({ photoName, name, price, soldOut, ingredients }) {
   return (
     <li className="pizza">
       <img src={photoName} alt={name} />
       <div>
         <h3>{name}</h3>
-        <span>${price}</span>
+        <p>{ingredients}</p>
+        <span>${soldOut ? "SOLD OUT" : price}</span>
       </div>
     </li>
   );
